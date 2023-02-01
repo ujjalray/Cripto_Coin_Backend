@@ -4,6 +4,7 @@ const user = require("./Scama/User");
 const cors = require("cors");
 const app = express();
 const BASE_URL= process.env.BASE_URL;
+const PORT=process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
@@ -20,6 +21,6 @@ app.post("/submit", async (req, res) => {
     res.send(feedback);
 });
 
-app.listen(4000,() => {
+app.listen(PORT,() => {
     console.log("Server listening on port 4000");
 });
